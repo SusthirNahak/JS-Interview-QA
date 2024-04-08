@@ -1,4 +1,4 @@
-// Topic Name: var vs let vs const , and scope
+//***************** Topic Name: var vs let vs const , scope ,hoisting **********************//
 /*
 scope - 
 scope is a certain region of a program,
@@ -7,12 +7,14 @@ beyond that it cant be recoginized.
 ex- global scope,blog scope,function scope
 */
 var a=7;// a is a global scope ,we can access anyover here.
-console.log(a);
+//console.log(a);
+
 ///////////////////////////////////////////////////////////
 {
     var b=8; //b (var) is a block scope ,we can access outside the block here.but not possible with let and const
 }
-console.log(b);
+//console.log(b);
+
 ///////////////////////////////////////////////////////////
 
 function test(){
@@ -21,8 +23,8 @@ function test(){
     if(true){
         let a ="hy" // variable shadowing ,it shadows the a (hello) value
         let b ="good bye" // variable shadowing,it shadows the b (bye) value
-        console.log(a);
-        console.log(b);
+       // console.log(a);
+       // console.log(b);
     }
 }
 test();
@@ -38,3 +40,20 @@ test();
  --const can not be declared without any value,but we can declare var and let without value.
 
 */
+
+//Hoisting
+/*
+--Hoisting - During the creation phase ,javascript enginee moves the variables and function declation to top of codes.
+this is known as hoisting
+--var is hoisted(op-undefined),let is giving error but it is hoisted at the temporal dead zone
+--temporal dead zone is the time between declation and initialization of let and const variables
+
+
+
+*/
+//example:
+function abc(){
+    // console.log(a);     //output is undefined, if var is declared before console.log then it will give the output
+    var a=5;
+}
+abc()
